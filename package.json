@@ -1,0 +1,9 @@
+{
+  "name": "web-starter",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/seonghyeonkimm/web-starter.git",
+  "author": "<impressor7@gmail.com>",
+  "license": "MIT",
+  "packageManager": "yarn@3.2.3"
+}
