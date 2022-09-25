@@ -1,7 +1,7 @@
 import { createServer } from "@graphql-yoga/node";
 import { makeExecutableSchema } from '@graphql-tools/schema';
 
-import typeDefs from 'src/graphql/__generated__/typeDefs';
+import typeDefs from 'src/graphql/typeDefs';
 
 const schema = makeExecutableSchema({
   typeDefs,

@@ -1,9 +1,9 @@
 schema: "./src/graphql/modules/**/*.graphql"
 generates:
-  ./src/graphql/__generated__/schema.graphql:
+  ./src/graphql/schema.graphql:
     plugins:
       - schema-ast
-  ./src/graphql/__generated__/typeDefs.ts:
+  ./src/graphql/typeDefs.ts:
     plugins:
       - add:
           content: |

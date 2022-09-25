@@ -1,6 +1,5 @@
-import { fetchQuery, graphql, useLazyLoadQuery } from "react-relay";
-import { initEnvironment } from "src/graphql/RelayEnvironment";
-import { pagesQuery } from "./__generated__/pagesQuery.graphql";
+import { graphql, useLazyLoadQuery } from "react-relay";
+import { pagesQuery } from "src/graphql/__generated__/pagesQuery.graphql";
 
 const PAGES_QUERY = graphql`
   query pagesQuery {

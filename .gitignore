@@ -7,4 +7,6 @@
 !.yarn/versions
 
 .next
-__generated__
+src/graphql/__generated__
+src/graphql/schema.graphql
+src/graphql/typeDefs.ts
