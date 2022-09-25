@@ -4643,6 +4643,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"randombytes@npm:^2.1.0":
+  version: 2.1.0
+  resolution: "randombytes@npm:2.1.0"
+  dependencies:
+    safe-buffer: ^5.1.0
+  checksum: d779499376bd4cbb435ef3ab9a957006c8682f343f14089ed5f27764e4645114196e75b7f6abf1cbd84fd247c0cb0651698444df8c9bf30e62120fbbc52269d6
+  languageName: node
+  linkType: hard
+
 "react-dom@npm:^18.2.0":
   version: 18.2.0
   resolution: "react-dom@npm:18.2.0"
@@ -4737,6 +4746,15 @@ __metadata:
   bin:
     relay-compiler: cli.js
   checksum: 2c7bf680c6e60e4436af56cc463e9c81389265bb5371ea7d54c0eb45c6af2bbccbe0d57eee838c499d9b7625330be0927d4deb1926ab8e8984a8f306f8ea0ccc
+  languageName: node
+  linkType: hard
+
+"relay-nextjs@npm:^0.10.0":
+  version: 0.10.0
+  resolution: "relay-nextjs@npm:0.10.0"
+  dependencies:
+    serialize-javascript: ^5.0.1
+  checksum: b51f2b544dda20942e15bc82183dc3a33d37fccf9cb39140091bbe372f5dcca02be633ddebeca7d1fe0ae85fc35d136abbb2ae1bcda95a14310b1c3089007206
   languageName: node
   linkType: hard
 
@@ -4919,7 +4937,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"safe-buffer@npm:^5.0.1, safe-buffer@npm:~5.2.0":
+"safe-buffer@npm:^5.0.1, safe-buffer@npm:^5.1.0, safe-buffer@npm:~5.2.0":
   version: 5.2.1
   resolution: "safe-buffer@npm:5.2.1"
   checksum: b99c4b41fdd67a6aaf280fcd05e9ffb0813654894223afb78a31f14a19ad220bba8aba1cb14eddce1fcfb037155fe6de4e861784eb434f7d11ed58d1e70dd491
@@ -4997,6 +5015,15 @@ __metadata:
     tslib: ^2.0.3
     upper-case-first: ^2.0.2
   checksum: 3cfe6c0143e649132365695706702d7f729f484fa7b25f43435876efe7af2478243eefb052bacbcce10babf9319fd6b5b6bc59b94c80a1c819bcbb40651465d5
+  languageName: node
+  linkType: hard
+
+"serialize-javascript@npm:^5.0.1":
+  version: 5.0.1
+  resolution: "serialize-javascript@npm:5.0.1"
+  dependencies:
+    randombytes: ^2.1.0
+  checksum: bb45a427690c3d2711e28499de0fbf25036af1e23c63c6a9237ed0aa572fd0941fcdefe50a2dccf26d9df8c8b86ae38659e19d8ba7afd3fbc1f1c7539a2a48d2
   languageName: node
   linkType: hard
 
@@ -5626,6 +5653,7 @@ __metadata:
     react-dom: ^18.2.0
     react-relay: ^14.1.0
     relay-compiler: ^14.1.0
+    relay-nextjs: ^0.10.0
     relay-runtime: ^14.1.0
     ts-node: ^10.9.1
     typescript: 4.8.3

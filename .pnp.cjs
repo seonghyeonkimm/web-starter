@@ -52,6 +52,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["react-dom", "virtual:47a407cae1cec1a9655ec3afb4ea9a9b52766dd04e325560625b53ecc6b0456fe1b4cece89639b25a511b7f539eb588ceacbdab71c411f2d7446c85b7d2f74b9#npm:18.2.0"],\
             ["react-relay", "virtual:47a407cae1cec1a9655ec3afb4ea9a9b52766dd04e325560625b53ecc6b0456fe1b4cece89639b25a511b7f539eb588ceacbdab71c411f2d7446c85b7d2f74b9#npm:14.1.0"],\
             ["relay-compiler", "npm:14.1.0"],\
+            ["relay-nextjs", "npm:0.10.0"],\
             ["relay-runtime", "npm:14.1.0"],\
             ["ts-node", "virtual:47a407cae1cec1a9655ec3afb4ea9a9b52766dd04e325560625b53ecc6b0456fe1b4cece89639b25a511b7f539eb588ceacbdab71c411f2d7446c85b7d2f74b9#npm:10.9.1"],\
             ["typescript", "patch:typescript@npm%3A4.8.3#~builtin<compat/typescript>::version=4.8.3&hash=a1c5e5"]\
@@ -5864,6 +5865,16 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD"\
         }]\
       ]],\
+      ["randombytes", [\
+        ["npm:2.1.0", {\
+          "packageLocation": "./.yarn/cache/randombytes-npm-2.1.0-e3da76bccf-d779499376.zip/node_modules/randombytes/",\
+          "packageDependencies": [\
+            ["randombytes", "npm:2.1.0"],\
+            ["safe-buffer", "npm:5.2.1"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
       ["react", [\
         ["npm:18.2.0", {\
           "packageLocation": "./.yarn/cache/react-npm-18.2.0-1eae08fee2-88e38092da.zip/node_modules/react/",\
@@ -5991,6 +6002,16 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/unplugged/relay-compiler-npm-14.1.0-3e6bc34b14/node_modules/relay-compiler/",\
           "packageDependencies": [\
             ["relay-compiler", "npm:14.1.0"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["relay-nextjs", [\
+        ["npm:0.10.0", {\
+          "packageLocation": "./.yarn/cache/relay-nextjs-npm-0.10.0-04727ddf32-b51f2b544d.zip/node_modules/relay-nextjs/",\
+          "packageDependencies": [\
+            ["relay-nextjs", "npm:0.10.0"],\
+            ["serialize-javascript", "npm:5.0.1"]\
           ],\
           "linkType": "HARD"\
         }]\
@@ -6246,6 +6267,16 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["no-case", "npm:3.0.4"],\
             ["tslib", "npm:2.4.0"],\
             ["upper-case-first", "npm:2.0.2"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["serialize-javascript", [\
+        ["npm:5.0.1", {\
+          "packageLocation": "./.yarn/cache/serialize-javascript-npm-5.0.1-8ffc173f09-bb45a42769.zip/node_modules/serialize-javascript/",\
+          "packageDependencies": [\
+            ["serialize-javascript", "npm:5.0.1"],\
+            ["randombytes", "npm:2.1.0"]\
           ],\
           "linkType": "HARD"\
         }]\
@@ -7028,6 +7059,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["react-dom", "virtual:47a407cae1cec1a9655ec3afb4ea9a9b52766dd04e325560625b53ecc6b0456fe1b4cece89639b25a511b7f539eb588ceacbdab71c411f2d7446c85b7d2f74b9#npm:18.2.0"],\
             ["react-relay", "virtual:47a407cae1cec1a9655ec3afb4ea9a9b52766dd04e325560625b53ecc6b0456fe1b4cece89639b25a511b7f539eb588ceacbdab71c411f2d7446c85b7d2f74b9#npm:14.1.0"],\
             ["relay-compiler", "npm:14.1.0"],\
+            ["relay-nextjs", "npm:0.10.0"],\
             ["relay-runtime", "npm:14.1.0"],\
             ["ts-node", "virtual:47a407cae1cec1a9655ec3afb4ea9a9b52766dd04e325560625b53ecc6b0456fe1b4cece89639b25a511b7f539eb588ceacbdab71c411f2d7446c85b7d2f74b9#npm:10.9.1"],\
             ["typescript", "patch:typescript@npm%3A4.8.3#~builtin<compat/typescript>::version=4.8.3&hash=a1c5e5"]\
