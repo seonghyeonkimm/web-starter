@@ -42,7 +42,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@babel/runtime@npm:^7.0.0, @babel/runtime@npm:^7.10.2, @babel/runtime@npm:^7.18.9, @babel/runtime@npm:^7.7.2":
+"@babel/runtime@npm:^7.0.0, @babel/runtime@npm:^7.10.2, @babel/runtime@npm:^7.18.9, @babel/runtime@npm:^7.19.0, @babel/runtime@npm:^7.7.2":
   version: 7.19.0
   resolution: "@babel/runtime@npm:7.19.0"
   dependencies:
@@ -3094,6 +3094,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "web-starter@workspace:."
   dependencies:
+    "@babel/runtime": ^7.19.0
     "@graphql-yoga/node": ^2.13.13
     "@types/node": 18.7.20
     "@types/react": 18.0.21

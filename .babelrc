@@ -1,5 +1,4 @@
 {
-  "plugins": [
-    "relay"
-  ]
+  "presets": ["next/babel"],
+  "plugins": ["relay"]
 }

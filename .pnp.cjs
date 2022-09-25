@@ -33,6 +33,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         [null, {\
           "packageLocation": "./",\
           "packageDependencies": [\
+            ["@babel/runtime", "npm:7.19.0"],\
             ["@graphql-yoga/node", "virtual:47a407cae1cec1a9655ec3afb4ea9a9b52766dd04e325560625b53ecc6b0456fe1b4cece89639b25a511b7f539eb588ceacbdab71c411f2d7446c85b7d2f74b9#npm:2.13.13"],\
             ["@types/node", "npm:18.7.20"],\
             ["@types/react", "npm:18.0.21"],\
@@ -3831,6 +3832,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./",\
           "packageDependencies": [\
             ["web-starter", "workspace:."],\
+            ["@babel/runtime", "npm:7.19.0"],\
             ["@graphql-yoga/node", "virtual:47a407cae1cec1a9655ec3afb4ea9a9b52766dd04e325560625b53ecc6b0456fe1b4cece89639b25a511b7f539eb588ceacbdab71c411f2d7446c85b7d2f74b9#npm:2.13.13"],\
             ["@types/node", "npm:18.7.20"],\
             ["@types/react", "npm:18.0.21"],\
