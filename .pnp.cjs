@@ -41,6 +41,8 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@graphql-yoga/node", "virtual:47a407cae1cec1a9655ec3afb4ea9a9b52766dd04e325560625b53ecc6b0456fe1b4cece89639b25a511b7f539eb588ceacbdab71c411f2d7446c85b7d2f74b9#npm:2.13.13"],\
             ["@types/node", "npm:18.7.20"],\
             ["@types/react", "npm:18.0.21"],\
+            ["@types/react-relay", "npm:14.1.1"],\
+            ["@types/relay-runtime", "npm:14.1.3"],\
             ["babel-plugin-relay", "npm:14.1.0"],\
             ["eslint", "npm:8.24.0"],\
             ["eslint-config-next", "virtual:47a407cae1cec1a9655ec3afb4ea9a9b52766dd04e325560625b53ecc6b0456fe1b4cece89639b25a511b7f539eb588ceacbdab71c411f2d7446c85b7d2f74b9#npm:12.3.1"],\
@@ -50,6 +52,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["react-dom", "virtual:47a407cae1cec1a9655ec3afb4ea9a9b52766dd04e325560625b53ecc6b0456fe1b4cece89639b25a511b7f539eb588ceacbdab71c411f2d7446c85b7d2f74b9#npm:18.2.0"],\
             ["react-relay", "virtual:47a407cae1cec1a9655ec3afb4ea9a9b52766dd04e325560625b53ecc6b0456fe1b4cece89639b25a511b7f539eb588ceacbdab71c411f2d7446c85b7d2f74b9#npm:14.1.0"],\
             ["relay-compiler", "npm:14.1.0"],\
+            ["relay-runtime", "npm:14.1.0"],\
             ["ts-node", "virtual:47a407cae1cec1a9655ec3afb4ea9a9b52766dd04e325560625b53ecc6b0456fe1b4cece89639b25a511b7f539eb588ceacbdab71c411f2d7446c85b7d2f74b9#npm:10.9.1"],\
             ["typescript", "patch:typescript@npm%3A4.8.3#~builtin<compat/typescript>::version=4.8.3&hash=a1c5e5"]\
           ],\
@@ -61,7 +64,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/@ardatan-sync-fetch-npm-0.0.1-77efa386d1-af39bdfb4c.zip/node_modules/@ardatan/sync-fetch/",\
           "packageDependencies": [\
             ["@ardatan/sync-fetch", "npm:0.0.1"],\
-            ["node-fetch", "virtual:eff58a3cf6c7cfe16aaf2935bd79df754b2c0760288c5dbdcd93ad2ed59fb32804b56fb1efaeec4e684dcba492668065ce57b484245bb4a822029db488952310#npm:2.6.7"]\
+            ["node-fetch", "virtual:e414995db9c779306e687c7a7c66965e66d0cd7270f6b9fc4f00cc9772c5d50b305ab83e142e0e21dbf10968f7437cbdfcb170d05f4bde68707ac7d0082c9cca#npm:2.6.7"]\
           ],\
           "linkType": "HARD"\
         }]\
@@ -1585,6 +1588,26 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD"\
         }]\
       ]],\
+      ["@types/react-relay", [\
+        ["npm:14.1.1", {\
+          "packageLocation": "./.yarn/cache/@types-react-relay-npm-14.1.1-4f17554412-7c3849782f.zip/node_modules/@types/react-relay/",\
+          "packageDependencies": [\
+            ["@types/react-relay", "npm:14.1.1"],\
+            ["@types/react", "npm:18.0.21"],\
+            ["@types/relay-runtime", "npm:14.1.3"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["@types/relay-runtime", [\
+        ["npm:14.1.3", {\
+          "packageLocation": "./.yarn/cache/@types-relay-runtime-npm-14.1.3-7c31139576-e48f2feb5d.zip/node_modules/@types/relay-runtime/",\
+          "packageDependencies": [\
+            ["@types/relay-runtime", "npm:14.1.3"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
       ["@types/scheduler", [\
         ["npm:0.16.2", {\
           "packageLocation": "./.yarn/cache/@types-scheduler-npm-0.16.2-ba3a7d8c68-b6b4dcfeae.zip/node_modules/@types/scheduler/",\
@@ -1705,7 +1728,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["event-target-polyfill", "npm:0.0.3"],\
             ["form-data-encoder", "npm:1.7.2"],\
             ["formdata-node", "npm:4.4.1"],\
-            ["node-fetch", "virtual:eff58a3cf6c7cfe16aaf2935bd79df754b2c0760288c5dbdcd93ad2ed59fb32804b56fb1efaeec4e684dcba492668065ce57b484245bb4a822029db488952310#npm:2.6.7"],\
+            ["node-fetch", "virtual:e414995db9c779306e687c7a7c66965e66d0cd7270f6b9fc4f00cc9772c5d50b305ab83e142e0e21dbf10968f7437cbdfcb170d05f4bde68707ac7d0082c9cca#npm:2.6.7"],\
             ["undici", "npm:5.10.0"],\
             ["web-streams-polyfill", "npm:3.2.1"]\
           ],\
@@ -1720,7 +1743,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["busboy", "npm:1.6.0"],\
             ["form-data-encoder", "npm:1.7.2"],\
             ["formdata-node", "npm:4.4.1"],\
-            ["node-fetch", "virtual:eff58a3cf6c7cfe16aaf2935bd79df754b2c0760288c5dbdcd93ad2ed59fb32804b56fb1efaeec4e684dcba492668065ce57b484245bb4a822029db488952310#npm:2.6.7"],\
+            ["node-fetch", "virtual:e414995db9c779306e687c7a7c66965e66d0cd7270f6b9fc4f00cc9772c5d50b305ab83e142e0e21dbf10968f7437cbdfcb170d05f4bde68707ac7d0082c9cca#npm:2.6.7"],\
             ["undici", "npm:5.10.0"],\
             ["web-streams-polyfill", "npm:3.2.1"]\
           ],\
@@ -2671,7 +2694,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/cross-fetch-npm-3.1.5-e414995db9-f6b8c6ee3e.zip/node_modules/cross-fetch/",\
           "packageDependencies": [\
             ["cross-fetch", "npm:3.1.5"],\
-            ["node-fetch", "virtual:eff58a3cf6c7cfe16aaf2935bd79df754b2c0760288c5dbdcd93ad2ed59fb32804b56fb1efaeec4e684dcba492668065ce57b484245bb4a822029db488952310#npm:2.6.7"]\
+            ["node-fetch", "virtual:e414995db9c779306e687c7a7c66965e66d0cd7270f6b9fc4f00cc9772c5d50b305ab83e142e0e21dbf10968f7437cbdfcb170d05f4bde68707ac7d0082c9cca#npm:2.6.7"]\
           ],\
           "linkType": "HARD"\
         }]\
@@ -4540,7 +4563,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/isomorphic-fetch-npm-3.0.0-bce711adff-e5ab79a56c.zip/node_modules/isomorphic-fetch/",\
           "packageDependencies": [\
             ["isomorphic-fetch", "npm:3.0.0"],\
-            ["node-fetch", "virtual:eff58a3cf6c7cfe16aaf2935bd79df754b2c0760288c5dbdcd93ad2ed59fb32804b56fb1efaeec4e684dcba492668065ce57b484245bb4a822029db488952310#npm:2.6.7"],\
+            ["node-fetch", "virtual:e414995db9c779306e687c7a7c66965e66d0cd7270f6b9fc4f00cc9772c5d50b305ab83e142e0e21dbf10968f7437cbdfcb170d05f4bde68707ac7d0082c9cca#npm:2.6.7"],\
             ["whatwg-fetch", "npm:3.6.2"]\
           ],\
           "linkType": "HARD"\
@@ -5338,10 +5361,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           ],\
           "linkType": "SOFT"\
         }],\
-        ["virtual:eff58a3cf6c7cfe16aaf2935bd79df754b2c0760288c5dbdcd93ad2ed59fb32804b56fb1efaeec4e684dcba492668065ce57b484245bb4a822029db488952310#npm:2.6.7", {\
-          "packageLocation": "./.yarn/__virtual__/node-fetch-virtual-1eb1c1e3e6/0/cache/node-fetch-npm-2.6.7-777aa2a6df-8d816ffd1e.zip/node_modules/node-fetch/",\
+        ["virtual:e414995db9c779306e687c7a7c66965e66d0cd7270f6b9fc4f00cc9772c5d50b305ab83e142e0e21dbf10968f7437cbdfcb170d05f4bde68707ac7d0082c9cca#npm:2.6.7", {\
+          "packageLocation": "./.yarn/__virtual__/node-fetch-virtual-10f4bc17d9/0/cache/node-fetch-npm-2.6.7-777aa2a6df-8d816ffd1e.zip/node_modules/node-fetch/",\
           "packageDependencies": [\
-            ["node-fetch", "virtual:eff58a3cf6c7cfe16aaf2935bd79df754b2c0760288c5dbdcd93ad2ed59fb32804b56fb1efaeec4e684dcba492668065ce57b484245bb4a822029db488952310#npm:2.6.7"],\
+            ["node-fetch", "virtual:e414995db9c779306e687c7a7c66965e66d0cd7270f6b9fc4f00cc9772c5d50b305ab83e142e0e21dbf10968f7437cbdfcb170d05f4bde68707ac7d0082c9cca#npm:2.6.7"],\
             ["@types/encoding", null],\
             ["encoding", null],\
             ["whatwg-url", "npm:5.0.0"]\
@@ -6994,6 +7017,8 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@graphql-yoga/node", "virtual:47a407cae1cec1a9655ec3afb4ea9a9b52766dd04e325560625b53ecc6b0456fe1b4cece89639b25a511b7f539eb588ceacbdab71c411f2d7446c85b7d2f74b9#npm:2.13.13"],\
             ["@types/node", "npm:18.7.20"],\
             ["@types/react", "npm:18.0.21"],\
+            ["@types/react-relay", "npm:14.1.1"],\
+            ["@types/relay-runtime", "npm:14.1.3"],\
             ["babel-plugin-relay", "npm:14.1.0"],\
             ["eslint", "npm:8.24.0"],\
             ["eslint-config-next", "virtual:47a407cae1cec1a9655ec3afb4ea9a9b52766dd04e325560625b53ecc6b0456fe1b4cece89639b25a511b7f539eb588ceacbdab71c411f2d7446c85b7d2f74b9#npm:12.3.1"],\
@@ -7003,6 +7028,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["react-dom", "virtual:47a407cae1cec1a9655ec3afb4ea9a9b52766dd04e325560625b53ecc6b0456fe1b4cece89639b25a511b7f539eb588ceacbdab71c411f2d7446c85b7d2f74b9#npm:18.2.0"],\
             ["react-relay", "virtual:47a407cae1cec1a9655ec3afb4ea9a9b52766dd04e325560625b53ecc6b0456fe1b4cece89639b25a511b7f539eb588ceacbdab71c411f2d7446c85b7d2f74b9#npm:14.1.0"],\
             ["relay-compiler", "npm:14.1.0"],\
+            ["relay-runtime", "npm:14.1.0"],\
             ["ts-node", "virtual:47a407cae1cec1a9655ec3afb4ea9a9b52766dd04e325560625b53ecc6b0456fe1b4cece89639b25a511b7f539eb588ceacbdab71c411f2d7446c85b7d2f74b9#npm:10.9.1"],\
             ["typescript", "patch:typescript@npm%3A4.8.3#~builtin<compat/typescript>::version=4.8.3&hash=a1c5e5"]\
           ],\
