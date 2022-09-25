@@ -244,6 +244,18 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@graphql-codegen/add@npm:^3.2.1":
+  version: 3.2.1
+  resolution: "@graphql-codegen/add@npm:3.2.1"
+  dependencies:
+    "@graphql-codegen/plugin-helpers": ^2.6.2
+    tslib: ~2.4.0
+  peerDependencies:
+    graphql: ^0.8.0 || ^0.9.0 || ^0.10.0 || ^0.11.0 || ^0.12.0 || ^0.13.0 || ^14.0.0 || ^15.0.0 || ^16.0.0
+  checksum: 4f9c645a3cf4b6e64c8ea5cbaba95075df2f485e3fea5b2c369bcf898272d0a6665b3eb0b541dc57d3d8400b23610848c8348a469e472db1a1c558d61580dca0
+  languageName: node
+  linkType: hard
+
 "@graphql-codegen/cli@npm:2.12.1":
   version: 2.12.1
   resolution: "@graphql-codegen/cli@npm:2.12.1"
@@ -536,7 +548,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@graphql-tools/schema@npm:9.0.4, @graphql-tools/schema@npm:^9.0.0":
+"@graphql-tools/schema@npm:9.0.4, @graphql-tools/schema@npm:^9.0.0, @graphql-tools/schema@npm:^9.0.4":
   version: 9.0.4
   resolution: "@graphql-tools/schema@npm:9.0.4"
   dependencies:
@@ -5579,8 +5591,10 @@ __metadata:
   resolution: "web-starter@workspace:."
   dependencies:
     "@babel/runtime": ^7.19.0
+    "@graphql-codegen/add": ^3.2.1
     "@graphql-codegen/cli": 2.12.1
     "@graphql-codegen/schema-ast": ^2.5.1
+    "@graphql-tools/schema": ^9.0.4
     "@graphql-yoga/node": ^2.13.13
     "@types/node": 18.7.20
     "@types/react": 18.0.21
