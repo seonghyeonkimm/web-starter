@@ -1,6 +1,6 @@
-{
-  "presets": ["next/babel"],
-  "plugins": [
+module.exports = {
+  presets: ["next/babel"],
+  plugins: [
     [
       "relay",
       {
