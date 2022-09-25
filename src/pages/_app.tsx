@@ -1,6 +1,6 @@
 import { Suspense } from "react";
 import { RelayEnvironmentProvider } from "react-relay";
-import { getClientEnvironment } from "src/graphql/lib/relay";
+import { getClientEnvironment } from "src/lib/relay";
 import { getInitialPreloadedQuery, getRelayProps } from "relay-nextjs/app";
 
 const clientEnvironment = getClientEnvironment();

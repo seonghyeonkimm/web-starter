@@ -1,7 +1,7 @@
 import { RelayProps } from "relay-nextjs";
 import { graphql, usePreloadedQuery } from "react-relay/hooks";
 import { pagesQuery } from "src/graphql/__generated__/pagesQuery.graphql";
-import { withRelaySSRData } from "src/graphql/lib/relay";
+import { withRelaySSRData } from "src/lib/relay";
 
 const PagesQuery = graphql`
   query pagesQuery {
