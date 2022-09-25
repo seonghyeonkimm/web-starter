@@ -2,14 +2,11 @@ import { createServer } from "@graphql-yoga/node";
 import { makeExecutableSchema } from '@graphql-tools/schema';
 
 import typeDefs from 'src/graphql/typeDefs';
+import resolvers from 'src/graphql/modules';
 
 const schema = makeExecutableSchema({
   typeDefs,
-  resolvers: {
-    Query: {
-      hello: () => "Hello from Yoga!",
-    },
-  },
+  resolvers,
 });
 
 const server = createServer({
