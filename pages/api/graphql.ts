@@ -2,7 +2,7 @@ import { createServer } from "@graphql-yoga/node";
 
 const server = createServer({
   schema: {
-    typeDefs: /* GraphQL */ `
+    typeDefs: /* GraphQL */`
       type Query {
         hello: String
       }
@@ -16,4 +16,3 @@ const server = createServer({
 });
 
 export default server;
-
