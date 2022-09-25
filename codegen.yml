@@ -1,5 +1,8 @@
 schema: "./src/graphql/modules/**/*.graphql"
 generates:
+  ./src/graphql/__generated__/schema.graphql:
+    plugins:
+      - schema-ast
   ./src/graphql/__generated__/typeDefs.ts:
     plugins:
       - add:
