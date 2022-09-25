@@ -1,9 +1,9 @@
 # Web starter template
 
 ## Technologies
- - Typescript
- - React
- - Next.js
+ - [x] Typescript
+ - [x] React
+ - [x] Next.js
  - vanilla-extract 
  - Prisma
  - Graphql
