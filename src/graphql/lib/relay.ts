@@ -1,52 +1,61 @@
-import { useState } from "react";
-import { Environment, Network, RecordSource, Store } from "relay-runtime";
-import { RecordMap } from "relay-runtime/lib/store/RelayStoreTypes";
+import { ComponentType } from "react";
+import { getRelaySerializedState, withRelay } from "relay-nextjs";
+import { withHydrateDatetime } from "relay-nextjs/date";
+import { WiredOptions, WiredProps } from "relay-nextjs/wired/component";
+import { Environment, Network, Store, RecordSource, GraphQLTaggedNode } from "relay-runtime";
 
-// Define a function that fetches the results of an operation (query/mutation/etc)
-// and returns its results as a Promise
-function fetchQuery(operation, variables) {
-  return fetch("http://localhost:3000/api/graphql", {
-    method: "POST",
-    headers: {
-      Accept: "application/json",
-      "Content-Type": "application/json",
-    }, // Add authentication and other headers here
-    body: JSON.stringify({
-      query: operation.text, // GraphQL text from input
-      variables,
-    }),
-  }).then((response) => response.json());
-}
+export function createNetwork() {
+  return Network.create(async (params, variables) => {
+    const response = await fetch("http://localhost:3000/api/graphql", {
+      method: "POST",
+      credentials: "include",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        query: params.text,
+        variables,
+      }),
+    });
 
-function createEnvironment() {
-  return new Environment({
-    // Create a network layer from the fetch function
-    network: Network.create(fetchQuery),
-    store: new Store(new RecordSource()),
+    const json = await response.text();
+    return JSON.parse(json, withHydrateDatetime);
   });
 }
 
-export function initEnvironment(initialRecords?: RecordMap) {
-  // Create a network layer from the fetch function
-  const environment = createEnvironment();
+let clientEnv: Environment | undefined;
+export function getClientEnvironment() {
+  if (typeof window === "undefined") return null;
 
-  // If your page has Next.js data fetching methods that use Relay, the initial records
-  // will get hydrated here
-  if (initialRecords) {
-    console.log('🚀 ~ initialRecords', initialRecords);
-    environment.getStore().publish(new RecordSource(initialRecords));
+  if (clientEnv == null) {
+    clientEnv = new Environment({
+      network: createNetwork(),
+      store: new Store(new RecordSource(getRelaySerializedState()?.records)),
+      isServer: false,
+    });
   }
-  // For SSG and SSR always create a new Relay environment
-  if (typeof window === "undefined") return environment;
-  // Create the Relay environment once in the client
 
-  return environment;
+  return clientEnv;
 }
 
-export function useEnvironment(initialRecords) {
-  const [store] = useState(
-    () => initEnvironment(initialRecords),
-  );
+export function createServerEnvironment() {
+  return new Environment({
+    network: createNetwork(),
+    store: new Store(new RecordSource()),
+    isServer: true,
+  });
+}
 
-  return store;
+export function withRelaySSRData<Props extends WiredProps, ServerSideProps>(
+  PageComponent: ComponentType<Props>,
+  GraphQLDocument: GraphQLTaggedNode,
+  options?: WiredOptions<Props, ServerSideProps>
+) {
+  return withRelay(PageComponent, GraphQLDocument, {
+    createClientEnvironment: () => getClientEnvironment(),
+    createServerEnvironment: async () => {
+      return createServerEnvironment();
+    },
+    ...options,
+  });
 }

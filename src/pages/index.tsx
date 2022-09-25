@@ -1,21 +1,22 @@
-import { graphql, useLazyLoadQuery } from "react-relay";
+import { RelayProps } from "relay-nextjs";
+import { graphql, usePreloadedQuery } from "react-relay/hooks";
 import { pagesQuery } from "src/graphql/__generated__/pagesQuery.graphql";
+import { withRelaySSRData } from "src/graphql/lib/relay";
 
-const PAGES_QUERY = graphql`
+const PagesQuery = graphql`
   query pagesQuery {
     hello
   }
-`
+`;
 
-
-const Index = (props) => {
-  const result = useLazyLoadQuery<pagesQuery>(PAGES_QUERY, {});
+function MainPage({ preloadedQuery }: RelayProps<{}, pagesQuery>) {
+  const query = usePreloadedQuery(PagesQuery, preloadedQuery);
 
   return (
     <div>
-      {result.hello}
+      Hello {query.hello}
     </div>
   );
-};
+}
 
-export default Index;
+export default withRelaySSRData(MainPage, PagesQuery);

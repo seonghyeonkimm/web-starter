@@ -1,14 +1,21 @@
 import { Suspense } from "react";
 import { RelayEnvironmentProvider } from "react-relay";
-import { useEnvironment } from "src/graphql/lib/relay";
+import { getClientEnvironment } from "src/graphql/lib/relay";
+import { getInitialPreloadedQuery, getRelayProps } from "relay-nextjs/app";
+
+const clientEnvironment = getClientEnvironment();
+const initialPreloadedQuery = getInitialPreloadedQuery({
+  createClientEnvironment: () => getClientEnvironment(),
+});
 
 export default function App({ Component, pageProps }) {
-  const environment = useEnvironment(pageProps.initialRecords);
+  const relayProps = getRelayProps(pageProps, initialPreloadedQuery);
+  const environment = relayProps.preloadedQuery?.environment ?? clientEnvironment;
 
   return (
     <RelayEnvironmentProvider environment={environment}>
       <Suspense fallback={null}>
-        <Component {...pageProps} />
+        <Component {...pageProps} {...relayProps} />
       </Suspense>
     </RelayEnvironmentProvider>
   );
