@@ -40,3 +40,5 @@ yarn dev
 - [ ] graphql module example
 - [ ] graphql-mesh
 - [ ] testing env
+- [ ] Organize template
+- [ ] Start example project
