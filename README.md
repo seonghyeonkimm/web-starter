@@ -8,6 +8,7 @@
 - [x] Prisma
 - [x] Graphql
 - [x] MongoDB
+- [ ] react-relay watch
 - [ ] vanilla-extract
 - [ ] eslint config
 - [ ] module example
