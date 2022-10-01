@@ -1,3 +1,5 @@
+overwrite: true
+documents: null
 schema: "./src/graphql/modules/**/*.graphql"
 generates:
   ./src/graphql/schema.graphql:
@@ -12,3 +14,14 @@ generates:
       - add:
           placement: "append"
           content: "`"
+  ./src/graphql/resolvers-types.ts:
+    config:
+      contextType: ./modules#GrahpQLContext
+      mapperTypeSuffix: Model
+      mappers:
+        Cart: "@prisma/client#Cart"
+        CartItem: "@prisma/client#CartItem"
+    plugins:
+      - typescript
+      - typescript-resolvers
+      - "typescript-operations"

@@ -1,19 +1,16 @@
 {
-  "name": "web-starter",
-  "version": "1.0.0",
-  "main": "index.js",
-  "repository": "https://github.com/seonghyeonkimm/web-starter.git",
-  "author": "<impressor7@gmail.com>",
   "license": "MIT",
-  "packageManager": "yarn@3.2.3",
+  "name": "web-starter",
+  "repository": "https://github.com/seonghyeonkimm/web-starter.git",
   "scripts": {
-    "dev": "yarn run relay && next dev",
+    "dev": "dotenv -e .env.local -- yarn run relay && next dev",
     "build": "yarn run relay && next build",
     "start": "next start",
     "lint": "next lint",
     "relay": "relay-compiler",
     "codegen": "graphql-codegen --config codegen.yml",
-    "prisma-cli": "dotenv -e .env.local -- prisma"
+    "prisma:cli": "dotenv -e .env.local -- prisma",
+    "prisma:generate": "yarn run prisma:cli generate"
   },
   "dependencies": {
     "@graphql-tools/schema": "^9.0.4",
@@ -32,6 +29,9 @@
     "@graphql-codegen/add": "^3.2.1",
     "@graphql-codegen/cli": "2.12.1",
     "@graphql-codegen/schema-ast": "^2.5.1",
+    "@graphql-codegen/typescript": "^2.7.3",
+    "@graphql-codegen/typescript-operations": "^2.5.3",
+    "@graphql-codegen/typescript-resolvers": "^2.7.3",
     "@types/node": "18.7.20",
     "@types/react": "18.0.21",
     "@types/react-relay": "^14.1.1",
@@ -44,13 +44,5 @@
     "relay-compiler": "^14.1.0",
     "ts-node": "^10.9.1",
     "typescript": "4.8.3"
-  },
-  "dependenciesMeta": {
-    "@prisma/client@4.3.1": {
-      "unplugged": true
-    },
-    "prisma@4.3.1": {
-      "unplugged": true
-    }
   }
 }

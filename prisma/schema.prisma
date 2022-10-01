@@ -7,15 +7,18 @@ generator client {
   provider = "prisma-client-js"
 }
 
-model Post {
-  id     String @id @default(auto()) @map("_id") @db.ObjectId
-  title  String
-  userId String @db.ObjectId
-  user   User   @relation(fields: [userId], references: [id])
+model Cart {
+  id    String     @id @default(auto()) @map("_id") @db.ObjectId
+  items CartItem[]
 }
 
-model User {
-  id    String @id @default(auto()) @map("_id") @db.ObjectId
-  email String
-  posts Post[]
+model CartItem {
+  id          String  @id @default(auto()) @map("_id") @db.ObjectId
+  name        String
+  description String?
+  price       Int
+  quantity    Int
+  image       String?
+  cartId      String
+  cart        Cart    @relation(fields: [cartId], references: [id], onDelete: Cascade)
 }
