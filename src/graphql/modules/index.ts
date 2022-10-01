@@ -91,7 +91,6 @@ export async function findOrCreateCart(prisma: PrismaClient, id: string) {
       where: { id },
     });
   }
-  console.log({ cart });
 
   if (!cart) {
     cart = await prisma.cart.create({ data: {} });

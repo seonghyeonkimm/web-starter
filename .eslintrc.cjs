@@ -8,6 +8,10 @@ module.exports = {
   plugins: ["@typescript-eslint", "simple-import-sort", "import"],
   root: true,
   rules: {
+    // base rules
+    "no-console": "warn",
+
+    // import rules
     "@typescript-eslint/consistent-type-imports": "error",
     "simple-import-sort/imports": [
       "error",
