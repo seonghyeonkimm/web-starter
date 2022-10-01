@@ -1,9 +1,10 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
-const withPlugins = require("next-compose-plugins");
 
 const { createVanillaExtractPlugin } = require("@vanilla-extract/next-plugin");
+
+const withVanillaExtract = createVanillaExtractPlugin();
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {};
 
-module.exports = withPlugins([[createVanillaExtractPlugin()]], nextConfig);
+module.exports = withVanillaExtract(nextConfig);

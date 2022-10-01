@@ -47,7 +47,6 @@
     "eslint-config-next": "12.3.1",
     "eslint-plugin-import": "^2.26.0",
     "eslint-plugin-simple-import-sort": "^8.0.0",
-    "next-compose-plugins": "^2.2.1",
     "prisma": "4.4.0",
     "relay-compiler": "^14.1.0",
     "ts-node": "^10.9.1",

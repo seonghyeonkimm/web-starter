@@ -35,6 +35,8 @@ yarn dev
 - [x] react-relay watch
 - [x] eslint config
 - [x] Using prisma model typing in graphql resolvers
-- [ ] vanilla-extract
+- [x] vanilla-extract
+- [ ] lightTheme, darkTheme settings
 - [ ] module example
 - [ ] graphql-mesh
+- [ ] testing env
