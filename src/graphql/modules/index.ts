@@ -1,6 +1,8 @@
-import { PrismaClient } from "@prisma/client";
+import type { PrismaClient } from "@prisma/client";
+
 import prisma from "src/lib/prisma";
-import { Resolvers } from "../resolvers-types";
+
+import type { Resolvers } from "../resolvers-types";
 
 export type GrahpQLContext = { prisma: PrismaClient };
 

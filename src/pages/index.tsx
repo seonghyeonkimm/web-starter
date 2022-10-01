@@ -1,10 +1,10 @@
-import * as React from "react";
-import { RelayProps } from "relay-nextjs";
 import { graphql, useMutation, usePreloadedQuery } from "react-relay/hooks";
-import { pagesQuery } from "src/graphql/__generated__/pagesQuery.graphql";
+import type { RelayProps } from "relay-nextjs";
+
+import type { pagesAddCartMutation } from "src/graphql/__generated__/pagesAddCartMutation.graphql";
+import type { pagesQuery } from "src/graphql/__generated__/pagesQuery.graphql";
+import type { pagesRemoveCartMutation } from "src/graphql/__generated__/pagesRemoveCartMutation.graphql";
 import { withRelaySSRData } from "src/lib/relay";
-import { pagesAddCartMutation } from "src/graphql/__generated__/pagesAddCartMutation.graphql";
-import { pagesRemoveCartMutation } from "src/graphql/__generated__/pagesRemoveCartMutation.graphql";
 
 const PagesQuery = graphql`
   query pagesQuery {
@@ -20,8 +20,11 @@ const PagesQuery = graphql`
   }
 `;
 
-function MainPage({ preloadedQuery }: RelayProps<{}, pagesQuery>) {
+function MainPage({
+  preloadedQuery,
+}: RelayProps<Record<string, never>, pagesQuery>) {
   const query = usePreloadedQuery(PagesQuery, preloadedQuery);
+
   const [addMutation] = useMutation<pagesAddCartMutation>(graphql`
     mutation pagesAddCartMutation {
       addCartItem(

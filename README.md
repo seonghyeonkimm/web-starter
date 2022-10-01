@@ -27,7 +27,7 @@ yarn dev
 - [x] Graphql
 - [x] MongoDB
 - [x] react-relay watch
-- [ ] eslint config
+- [x] eslint config
 - [ ] vanilla-extract
 - [ ] module example
 - [ ] Using prisma model typing in graphql resolvers

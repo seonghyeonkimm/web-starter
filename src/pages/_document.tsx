@@ -1,5 +1,7 @@
-import { createRelayDocument, RelayDocument } from "relay-nextjs/document";
-import NextDocument, { Html, Head, Main, NextScript, DocumentContext } from "next/document";
+import type { DocumentContext } from "next/document";
+import NextDocument, { Head, Html, Main, NextScript } from "next/document";
+import type { RelayDocument } from "relay-nextjs/document";
+import { createRelayDocument } from "relay-nextjs/document";
 
 interface DocumentProps {
   relayDocument: RelayDocument;

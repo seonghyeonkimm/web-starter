@@ -1,9 +1,9 @@
-import { createServer } from "@graphql-yoga/node";
+import type { NextApiRequest, NextApiResponse } from "next";
 import { makeExecutableSchema } from "@graphql-tools/schema";
+import { createServer } from "@graphql-yoga/node";
 
+import { context, resolvers } from "src/graphql/modules";
 import typeDefs from "src/graphql/typeDefs";
-import { resolvers, context } from "src/graphql/modules";
-import { NextApiRequest, NextApiResponse } from "next";
 
 const schema = makeExecutableSchema({
   typeDefs,

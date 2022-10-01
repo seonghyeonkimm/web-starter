@@ -1,7 +1,8 @@
 import { Suspense } from "react";
 import { RelayEnvironmentProvider } from "react-relay";
-import { getClientEnvironment } from "src/lib/relay";
 import { getInitialPreloadedQuery, getRelayProps } from "relay-nextjs/app";
+
+import { getClientEnvironment } from "src/lib/relay";
 
 const clientEnvironment = getClientEnvironment();
 const initialPreloadedQuery = getInitialPreloadedQuery({
@@ -10,7 +11,8 @@ const initialPreloadedQuery = getInitialPreloadedQuery({
 
 export default function App({ Component, pageProps }) {
   const relayProps = getRelayProps(pageProps, initialPreloadedQuery);
-  const environment = relayProps.preloadedQuery?.environment ?? clientEnvironment;
+  const environment =
+    relayProps.preloadedQuery?.environment ?? clientEnvironment;
 
   return (
     <RelayEnvironmentProvider environment={environment}>

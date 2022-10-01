@@ -1,14 +1,9 @@
-import { ComponentType } from "react";
+import type { ComponentType } from "react";
 import { getRelaySerializedState, withRelay } from "relay-nextjs";
 import { withHydrateDatetime } from "relay-nextjs/date";
-import { WiredOptions, WiredProps } from "relay-nextjs/wired/component";
-import {
-  Environment,
-  Network,
-  Store,
-  RecordSource,
-  GraphQLTaggedNode,
-} from "relay-runtime";
+import type { WiredOptions, WiredProps } from "relay-nextjs/wired/component";
+import type { GraphQLTaggedNode } from "relay-runtime";
+import { Environment, Network, RecordSource, Store } from "relay-runtime";
 
 export function createNetwork() {
   return Network.create(async (params, variables) => {
