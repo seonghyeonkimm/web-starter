@@ -1,5 +1,23 @@
 # Web starter template
 
+## Requirements
+
+- [watchman](https://facebook.github.io/watchman/): needed to run relay-compiler when src changes
+
+## Install
+
+```bash
+# Install Dependencies
+yarn
+```
+
+## Development
+
+```bash
+# start devServer
+yarn dev
+```
+
 ## Technologies
 
 - [x] Typescript
@@ -8,9 +26,9 @@
 - [x] Prisma
 - [x] Graphql
 - [x] MongoDB
-- [ ] react-relay watch
-- [ ] vanilla-extract
+- [x] react-relay watch
 - [ ] eslint config
+- [ ] vanilla-extract
 - [ ] module example
 - [ ] Using prisma model typing in graphql resolvers
 - [ ] graphql-mesh

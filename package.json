@@ -3,7 +3,7 @@
   "name": "web-starter",
   "repository": "https://github.com/seonghyeonkimm/web-starter.git",
   "scripts": {
-    "dev": "dotenv -e .env.local -- yarn run relay && next dev",
+    "dev": "concurrently 'next dev' 'yarn run relay --watch'",
     "build": "yarn run relay && next build",
     "start": "next start",
     "lint": "next lint",
@@ -37,6 +37,7 @@
     "@types/react-relay": "^14.1.1",
     "@types/relay-runtime": "^14.1.3",
     "babel-plugin-relay": "^14.1.0",
+    "concurrently": "^7.4.0",
     "dotenv-cli": "^6.0.0",
     "eslint": "8.24.0",
     "eslint-config-next": "12.3.1",
