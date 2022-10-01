@@ -18,6 +18,12 @@ yarn
 yarn dev
 ```
 
+## Deploy
+
+- cloudflare
+- vercel
+- mongodb
+
 ## Technologies
 
 - [x] Typescript
@@ -28,7 +34,7 @@ yarn dev
 - [x] MongoDB
 - [x] react-relay watch
 - [x] eslint config
+- [x] Using prisma model typing in graphql resolvers
 - [ ] vanilla-extract
 - [ ] module example
-- [ ] Using prisma model typing in graphql resolvers
 - [ ] graphql-mesh
