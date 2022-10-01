@@ -36,6 +36,7 @@ yarn dev
 - [x] eslint config
 - [x] Using prisma model typing in graphql resolvers
 - [x] vanilla-extract
+- [ ] normalize.css
 - [ ] lightTheme, darkTheme settings
 - [ ] graphql module example
 - [ ] graphql-mesh
