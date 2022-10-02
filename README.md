@@ -9,6 +9,9 @@
 ```bash
 # Install Dependencies
 yarn
+
+# Copy .env.sample.local and fill out your mongodb database url
+cp .env.sample.local .env.local
 ```
 
 ## Development
