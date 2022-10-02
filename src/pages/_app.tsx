@@ -4,6 +4,7 @@ import { getInitialPreloadedQuery, getRelayProps } from "relay-nextjs/app";
 
 import { getClientEnvironment } from "src/lib/relay";
 
+import "normalize.css";
 import "src/styles/theme.css";
 
 const clientEnvironment = getClientEnvironment();
