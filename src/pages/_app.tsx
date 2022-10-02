@@ -6,6 +6,7 @@ import { getClientEnvironment } from "src/lib/relay";
 
 import "normalize.css";
 import "src/styles/theme.css";
+import "src/styles/App.css";
 
 const clientEnvironment = getClientEnvironment();
 const initialPreloadedQuery = getInitialPreloadedQuery({
