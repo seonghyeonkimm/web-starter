@@ -38,8 +38,12 @@ yarn dev
 - [x] vanilla-extract
 - [x] normalize.css
 - [x] lightTheme, darkTheme settings
-- [ ] graphql module example
-- [ ] graphql-mesh
+- [ ] graphql module example (installing graphl-modules)
+  - service (api request)
+  - mapper (convert to graphql schema)
+  - graphql (resolver, query, mutation, subscription)
+  - relay generation path change
+- [ ] graphql-mesh (add github graphql)
 - [ ] testing env
 - [ ] Organize template
 - [ ] Start example project

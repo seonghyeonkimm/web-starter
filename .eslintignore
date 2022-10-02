@@ -1,5 +1,5 @@
 .next
 node_modules
-src/graphql/__generated__
+__generated__
 src/graphql/typeDefs.ts
 src/graphql/resolvers-types.ts

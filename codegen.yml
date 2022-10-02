@@ -14,9 +14,13 @@ generates:
       - add:
           placement: "append"
           content: "`"
-  ./src/graphql/resolvers-types.ts:
+  ./src/graphql/modules/:
+    preset: graphql-modules
+    presetConfig:
+      baseTypesPath: ../__generated__/graphql.ts
+      filename: __generated__/module-types.ts
     config:
-      contextType: ./modules#GrahpQLContext
+      contextType: ../modules#GrahpQLContext
       mapperTypeSuffix: Model
       mappers:
         Cart: "@prisma/client#Cart"
