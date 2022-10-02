@@ -2,10 +2,10 @@ import { graphql, useMutation, usePreloadedQuery } from "react-relay/hooks";
 import { useTheme } from "next-themes";
 import type { RelayProps } from "relay-nextjs";
 
-import type { pagesAddCartMutation } from "src/graphql/__generated__/pagesAddCartMutation.graphql";
-import type { pagesQuery } from "src/graphql/__generated__/pagesQuery.graphql";
-import type { pagesRemoveCartMutation } from "src/graphql/__generated__/pagesRemoveCartMutation.graphql";
 import { withRelaySSRData } from "src/lib/relay";
+import type { pagesAddCartMutation } from "src/relay/__generated__/pagesAddCartMutation.graphql";
+import type { pagesQuery } from "src/relay/__generated__/pagesQuery.graphql";
+import type { pagesRemoveCartMutation } from "src/relay/__generated__/pagesRemoveCartMutation.graphql";
 
 const PagesQuery = graphql`
   query pagesQuery {

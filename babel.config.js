@@ -4,8 +4,8 @@ module.exports = {
     [
       "relay",
       {
-        "artifactDirectory": "./src/graphql/__generated__"
-      }
-    ]
-  ]
-}
+        artifactDirectory: "./src/relay/__generated__",
+      },
+    ],
+  ],
+};
