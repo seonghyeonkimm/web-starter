@@ -1,4 +1,4 @@
-# Fullstack Web starter template
+# Web starter template
 
 Template which can be used to start a fullstack web application.
 
