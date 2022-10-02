@@ -8,7 +8,7 @@ import { withRelaySSRData } from "src/lib/relay";
 
 const PagesQuery = graphql`
   query pagesQuery {
-    cart(id: "6337d67ffce769bfe0392390") {
+    cart(id: "633969387d317c870e4c4b6b") {
       id
       totalItems
       items {
