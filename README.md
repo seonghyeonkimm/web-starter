@@ -1,4 +1,6 @@
-# Web starter template
+# Fullstack Web starter template
+
+Template which can be used to start a fullstack web application.
 
 ## Requirements
 
@@ -27,26 +29,8 @@ yarn dev
 - vercel
 - mongodb
 
-## Technologies
+## Todo
 
-- [x] Typescript
-- [x] React
-- [x] Next.js
-- [x] Prisma
-- [x] Graphql
-- [x] MongoDB
-- [x] react-relay watch
-- [x] eslint config
-- [x] Using prisma model typing in graphql resolvers
-- [x] vanilla-extract
-- [x] normalize.css
-- [x] lightTheme, darkTheme settings
-- [x] relay generation path change
-- [ ] graphql module example (installing graphl-modules)
-  - service (api request)
-  - mapper (convert to graphql schema)
-  - graphql (resolver, query, mutation, subscription)
-- [ ] graphql-mesh (add github graphql)
-- [ ] testing env
-- [ ] Organize template
-- [ ] Start example project
+- [ ] graphql-mesh (+ add github graphql as example)
+  - service, mapper, graphql (resolver, query, mutation)
+- [ ] testing configuration
