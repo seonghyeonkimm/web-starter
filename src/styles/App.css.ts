@@ -2,7 +2,7 @@ import { globalStyle } from "@vanilla-extract/css";
 
 import { darkMode, vars } from "./theme.css";
 
-globalStyle(`.${darkMode}`, {
+globalStyle(`${darkMode}`, {
   background: vars.palette.black,
   color: vars.palette.gray50,
   colorScheme: "dark",

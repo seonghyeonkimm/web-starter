@@ -37,7 +37,7 @@ yarn dev
 - [x] Using prisma model typing in graphql resolvers
 - [x] vanilla-extract
 - [x] normalize.css
-- [ ] lightTheme, darkTheme settings
+- [x] lightTheme, darkTheme settings
 - [ ] graphql module example
 - [ ] graphql-mesh
 - [ ] testing env

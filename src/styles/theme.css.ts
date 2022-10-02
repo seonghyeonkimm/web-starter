@@ -4,8 +4,7 @@ import { createGlobalTheme } from "@vanilla-extract/css";
 
 type Breakpoint = keyof typeof breakpoints;
 
-export const lightMode = "light";
-export const darkMode = "dark";
+export const darkMode = "[data-theme='dark']";
 export const breakpoints = {
   mobile: 0,
   tablet: 768,

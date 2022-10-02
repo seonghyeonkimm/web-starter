@@ -1,5 +1,6 @@
 import { Suspense } from "react";
 import { RelayEnvironmentProvider } from "react-relay";
+import { ThemeProvider } from "next-themes";
 import { getInitialPreloadedQuery, getRelayProps } from "relay-nextjs/app";
 
 import { getClientEnvironment } from "src/lib/relay";
@@ -19,10 +20,12 @@ export default function App({ Component, pageProps }) {
     relayProps.preloadedQuery?.environment ?? clientEnvironment;
 
   return (
-    <RelayEnvironmentProvider environment={environment}>
-      <Suspense fallback={null}>
-        <Component {...pageProps} {...relayProps} />
-      </Suspense>
-    </RelayEnvironmentProvider>
+    <ThemeProvider>
+      <RelayEnvironmentProvider environment={environment}>
+        <Suspense fallback={null}>
+          <Component {...pageProps} {...relayProps} />
+        </Suspense>
+      </RelayEnvironmentProvider>
+    </ThemeProvider>
   );
 }

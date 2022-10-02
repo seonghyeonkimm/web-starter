@@ -1,4 +1,5 @@
 import { graphql, useMutation, usePreloadedQuery } from "react-relay/hooks";
+import { useTheme } from "next-themes";
 import type { RelayProps } from "relay-nextjs";
 
 import type { pagesAddCartMutation } from "src/graphql/__generated__/pagesAddCartMutation.graphql";
@@ -23,6 +24,7 @@ const PagesQuery = graphql`
 function MainPage({
   preloadedQuery,
 }: RelayProps<Record<string, never>, pagesQuery>) {
+  const { theme, setTheme } = useTheme();
   const query = usePreloadedQuery(PagesQuery, preloadedQuery);
 
   const [addMutation] = useMutation<pagesAddCartMutation>(graphql`
@@ -61,6 +63,9 @@ function MainPage({
 
   return (
     <div>
+      <button onClick={() => setTheme(theme === "light" ? "dark" : "light")}>
+        Change Theme
+      </button>
       <button
         onClick={() =>
           addMutation({
