@@ -29,7 +29,7 @@ function MainPage({
     mutation pagesAddCartMutation {
       addCartItem(
         input: {
-          cartId: "6337d67ffce769bfe0392390"
+          cartId: "633969387d317c870e4c4b6b"
           name: "NewCartItem"
           price: 10000
         }
