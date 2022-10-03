@@ -46,3 +46,4 @@ yarn dev
 ## Todo
 
 - [ ] testing configuration
+- [ ] deploy examples
