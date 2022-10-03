@@ -7,17 +7,20 @@ import { Environment, Network, RecordSource, Store } from "relay-runtime";
 
 export function createNetwork() {
   return Network.create(async (params, variables) => {
-    const response = await fetch(`${process.env.GRAPHQL_ENDPOINT}`, {
-      method: "POST",
-      credentials: "include",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        query: params.text,
-        variables,
-      }),
-    });
+    const response = await fetch(
+      `${process.env.NEXT_PUBLIC_GRAPHQL_ENDPOINT}`,
+      {
+        method: "POST",
+        credentials: "include",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          query: params.text,
+          variables,
+        }),
+      }
+    );
 
     const json = await response.text();
     return JSON.parse(json, withHydrateDatetime);
