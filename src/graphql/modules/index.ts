@@ -1,15 +1,13 @@
-import type { PrismaClient } from "@prisma/client";
-
 import prisma from "src/lib/prisma";
 
-import { CartMutation, CartQuery, CartResolver } from "./cart";
+import { CartMutation, CartQuery, CartResolver, CartService } from "./cart";
 import type { Resolvers } from "../__generated__/graphql";
 
-export type GrahpQLContext = { prisma: PrismaClient };
+export type GrahpQLContext = { cartService: CartService };
 
 export function context(): GrahpQLContext {
   return {
-    prisma,
+    cartService: new CartService(prisma),
   };
 }
 
