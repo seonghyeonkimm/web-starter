@@ -31,7 +31,5 @@ yarn dev
 
 ## Todo
 
-- [ ] graphql-mesh (+ add github graphql as example)
-  - service, mapper, graphql (resolver, query, mutation)
 - [ ] testing configuration
 - [ ] Update Documentations
