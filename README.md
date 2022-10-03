@@ -43,7 +43,3 @@ yarn dev
   - Add environment variables to vercel dashboard
     - DATABASE_URL
     - NEXT_PUBLIC_GRAPHQL_ENDPOINT
-
-## Todo
-
-- [ ] testing configuration
