@@ -1,6 +1,8 @@
+node_modules
 .next
 .env.local
-node_modules
+.swc
+
 __generated__
 src/graphql/schema.graphql
 src/graphql/typeDefs.ts
