@@ -8,6 +8,16 @@ Template which can be used to start a fullstack web application.
 - mongodb database url
 - [watchman](https://facebook.github.io/watchman/): needed to run relay-compiler when src changes
 
+## Stack
+
+- typescript
+- react
+- next
+- relay
+- @vanilla-extract/css
+- graphql-yoga
+- prisma
+
 ## Install
 
 ```bash
