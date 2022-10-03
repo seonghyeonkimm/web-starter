@@ -2,10 +2,10 @@ overwrite: true
 documents: null
 schema: "./src/graphql/modules/**/*.graphql"
 generates:
-  ./src/graphql/schema.graphql:
+  ./src/graphql/__generated__/schema.graphql:
     plugins:
       - schema-ast
-  ./src/graphql/typeDefs.ts:
+  ./src/graphql/__generated__/typeDefs.ts:
     plugins:
       - add:
           content: |

@@ -3,9 +3,9 @@
   "name": "web-starter",
   "repository": "https://github.com/seonghyeonkimm/web-starter.git",
   "scripts": {
-    "postinstall": "yarn codegen && yarn prisma:generate",
+    "postinstall": "yarn codegen && yarn prisma:generate && yarn run relay",
     "dev": "concurrently 'next dev' 'yarn run relay --watch'",
-    "build": "yarn run relay && next build",
+    "build": "next build",
     "start": "next start",
     "lint": "next lint",
     "relay": "relay-compiler",
