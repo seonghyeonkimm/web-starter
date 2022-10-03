@@ -39,10 +39,8 @@ yarn dev
 
 ## Deploy
 
-- cloudflare
 - vercel
 
 ## Todo
 
 - [ ] testing configuration
-- [ ] deploy examples
