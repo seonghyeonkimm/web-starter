@@ -40,7 +40,7 @@ yarn dev
 ## Deploy
 
 - vercel
-  - you have to create DATABASE_URL, GRAPHQL_ENDPOINT environment variables on the vercel dashboard
+  - Add DATABASE_URL, NEXT_PUBLIC_GRAPHQL_ENDPOINT environment variables to vercel dashboard
 
 ## Todo
 
