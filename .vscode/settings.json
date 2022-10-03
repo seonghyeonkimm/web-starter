@@ -1,7 +1,4 @@
 {
-  "typescript.tsdk": ".yarn/sdks/typescript/lib",
-  "typescript.enablePromptUseWorkspaceTsdk": true,
-  "eslint.alwaysShowStatus": true,
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": true
   }
