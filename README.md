@@ -41,7 +41,6 @@ yarn dev
 
 - cloudflare
 - vercel
-- mongodb
 
 ## Todo
 
