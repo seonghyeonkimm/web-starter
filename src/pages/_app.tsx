@@ -1,5 +1,6 @@
 import { Suspense } from "react";
 import { RelayEnvironmentProvider } from "react-relay";
+import { SessionProvider } from "next-auth/react";
 import { ThemeProvider } from "next-themes";
 import { getInitialPreloadedQuery, getRelayProps } from "relay-nextjs/app";
 
@@ -14,18 +15,23 @@ const initialPreloadedQuery = getInitialPreloadedQuery({
   createClientEnvironment: () => getClientEnvironment(),
 });
 
-export default function App({ Component, pageProps }) {
+export default function App({
+  Component,
+  pageProps: { session, ...pageProps },
+}) {
   const relayProps = getRelayProps(pageProps, initialPreloadedQuery);
   const environment =
     relayProps.preloadedQuery?.environment ?? clientEnvironment;
 
   return (
-    <ThemeProvider>
-      <RelayEnvironmentProvider environment={environment}>
-        <Suspense fallback={null}>
-          <Component {...pageProps} {...relayProps} />
-        </Suspense>
-      </RelayEnvironmentProvider>
-    </ThemeProvider>
+    <SessionProvider session={session}>
+      <ThemeProvider>
+        <RelayEnvironmentProvider environment={environment}>
+          <Suspense fallback={null}>
+            <Component {...pageProps} {...relayProps} />
+          </Suspense>
+        </RelayEnvironmentProvider>
+      </ThemeProvider>
+    </SessionProvider>
   );
 }

@@ -1,4 +1,5 @@
 import { graphql, useMutation, usePreloadedQuery } from "react-relay/hooks";
+import { signIn, signOut, useSession } from "next-auth/react";
 import { useTheme } from "next-themes";
 import type { RelayProps } from "relay-nextjs";
 
@@ -26,6 +27,7 @@ function MainPage({
 }: RelayProps<Record<string, never>, pagesQuery>) {
   const { theme, setTheme } = useTheme();
   const query = usePreloadedQuery(PagesQuery, preloadedQuery);
+  const session = useSession();
 
   const [addMutation] = useMutation<pagesAddCartMutation>(graphql`
     mutation pagesAddCartMutation {
@@ -92,6 +94,14 @@ function MainPage({
         <button type="submit">Delete CartItem</button>
       </form>
       <pre>{JSON.stringify(query.cart, null, 2)}</pre>
+      <hr />
+      <div>
+        <button onClick={() => signIn("google")}>SignIn</button>
+        <button onClick={() => signOut()}>SignOut</button>
+        <div>
+          userInfo: <pre>{JSON.stringify(session, null, 2)}</pre>
+        </div>
+      </div>
     </div>
   );
 }
