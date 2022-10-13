@@ -4,7 +4,7 @@
   "repository": "https://github.com/seonghyeonkimm/web-starter.git",
   "scripts": {
     "postinstall": "yarn codegen && yarn prisma:generate && yarn run relay",
-    "dev": "concurrently 'next dev' 'yarn run relay --watch'",
+    "dev": "concurrently 'next dev' 'yarn run relay --watch' 'docker-compose up -d'",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
