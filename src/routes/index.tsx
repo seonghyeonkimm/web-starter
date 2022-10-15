@@ -3,12 +3,11 @@ import { signIn, signOut, useSession } from "next-auth/react";
 import { useTheme } from "next-themes";
 import type { RelayProps } from "relay-nextjs";
 
-import { withRelaySSRData } from "src/lib/relay";
 import { routesQuery } from "src/relay/__generated__/routesQuery.graphql";
 import { routesAddCartMutation } from "src/relay/__generated__/routesAddCartMutation.graphql";
 import { routesRemoveCartMutation } from "src/relay/__generated__/routesRemoveCartMutation.graphql";
 
-const RoutesQuery = graphql`
+export const RoutesQuery = graphql`
   query routesQuery {
     cart(id: "633969387d317c870e4c4b6b") {
       id
@@ -24,7 +23,7 @@ const RoutesQuery = graphql`
 
 function MainPage({
   preloadedQuery,
-}: RelayProps<Record<string, never>, routesQuery>) {
+}: RelayProps<Record<string, unknown>, routesQuery>) {
   const { theme, setTheme } = useTheme();
   const query = usePreloadedQuery(RoutesQuery, preloadedQuery);
   const session = useSession();
@@ -106,4 +105,4 @@ function MainPage({
   );
 }
 
-export default withRelaySSRData(MainPage, RoutesQuery);
+export default MainPage;
