@@ -31,6 +31,10 @@ class MyDocument extends NextDocument<DocumentProps> {
       <Html>
         <Head>
           <relayDocument.Script />
+          <link
+            rel="stylesheet"
+            href="https://fonts.googleapis.com/css?family=Noto%20Sans%20KR"
+          />
         </Head>
         <body>
           <Main />
