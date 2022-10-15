@@ -1,7 +1,6 @@
 import type { NextApiRequest, NextApiResponse } from "next";
 import { makeExecutableSchema } from "@graphql-tools/schema";
 import { createServer, useErrorHandler } from "@graphql-yoga/node";
-import chalk from "chalk";
 
 import typeDefs from "src/graphql/__generated__/typeDefs";
 import { context, resolvers } from "src/graphql/modules";
@@ -19,7 +18,7 @@ const server = createServer<{ req: NextApiRequest; res: NextApiResponse }>({
       ? [
           useErrorHandler((errorHandler) =>
             errorHandler.map((e) => {
-              console.log(chalk.bgRed(e.message));
+              console.log("❌ error: ", e.message);
             })
           ),
         ]
