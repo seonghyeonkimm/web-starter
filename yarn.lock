@@ -2763,6 +2763,14 @@
     lodash "^4.17.21"
     outdent "^0.8.0"
 
+"@vanilla-extract/jest-transform@^1.0.1":
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/@vanilla-extract/jest-transform/-/jest-transform-1.0.1.tgz#dee847c8a9cb855a69067781815731c5f4ceb913"
+  integrity sha512-xVwLozgKxByx7kYdMjZcpxS+XOdrQ0gyxGo+cNjWGX6WS9+mG3ixiKl2hNxv0y69vI7UGm1pz1YR2NVvsKNRlQ==
+  dependencies:
+    "@vanilla-extract/integration" "^6.0.0"
+    esbuild "^0.11.16"
+
 "@vanilla-extract/next-plugin@^2.1.1":
   version "2.1.1"
   resolved "https://registry.yarnpkg.com/@vanilla-extract/next-plugin/-/next-plugin-2.1.1.tgz#c030bb930d7e64739158e36bf49bdd55c96102af"
