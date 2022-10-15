@@ -5,7 +5,7 @@ Template which can be used to start a fullstack web application.
 ## Requirements
 
 - node >= 16.17.0
-- mongodb database url
+- mongodb
 - [watchman](https://facebook.github.io/watchman/): needed to run relay-compiler when src changes
 - [docker-compose](https://docs.docker.com.zh.xy2401.com/v17.12/compose/install/#install-compose): needed to run mongodb on your local machine
 
