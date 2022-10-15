@@ -9,7 +9,7 @@ import { routesRemoveCartMutation } from "src/relay/__generated__/routesRemoveCa
 
 export const RoutesQuery = graphql`
   query routesQuery {
-    cart(id: "633969387d317c870e4c4b6b") {
+    cart(id: "634a7e4467d45160072cdc7d") {
       id
       totalItems
       items {
@@ -32,7 +32,7 @@ function MainPage({
     mutation routesAddCartMutation {
       addCartItem(
         input: {
-          cartId: "633969387d317c870e4c4b6b"
+          cartId: "634a7e4467d45160072cdc7d"
           name: "NewCartItem"
           price: 10000
         }
