@@ -4,12 +4,12 @@ import { darkMode, vars } from "./theme.css";
 
 globalStyle(`${darkMode}`, {
   background: vars.palette.black,
-  color: vars.palette.gray50,
+  color: vars.palette.scales.gray50,
   colorScheme: "dark",
 });
 
 globalStyle("html", {
   background: vars.palette.white,
-  color: vars.palette.gray900,
+  color: vars.palette.scales.gray900,
   fontFamily: "Noto Sans KR",
 });
