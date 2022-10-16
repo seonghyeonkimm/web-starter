@@ -1,13 +1,18 @@
 import colors from "tailwindcss/colors";
 import { createGlobalTheme } from "@vanilla-extract/css";
+import { defineProperties, createSprinkles } from "@vanilla-extract/sprinkles";
 
 export const darkMode = "[data-theme='dark']";
+
+function px(value: string | number) {
+  return `${value}px`;
+}
 
 export type Breakpoint = keyof typeof breakpoints;
 export const breakpoints = {
   mobile: 0,
   tablet: 768,
-  desktop: 1440,
+  desktop: 1024,
 };
 
 const palette = {
@@ -75,44 +80,93 @@ const palette = {
   },
 };
 
-export const vars = createGlobalTheme(":root", {
-  palette,
-  spacing: {
-    "0": px(0),
+const spacing = {
+  0: px(0),
+  4: px(4),
+  8: px(8),
+  12: px(12),
+  20: px(20),
+  32: px(32),
+  40: px(40),
+  48: px(48),
+  80: px(80),
+  96: px(96),
+  120: px(120),
+};
+
+const contentWidth = {
+  "480": px(480),
+  "600": px(600),
+  "740": px(740),
+  "960": px(960),
+  "1120": px(1120),
+  "1350": px(1350),
+};
+
+const weight = {
+  regular: "400",
+  strong: "700",
+};
+
+const border = {
+  width: {
     "4": px(4),
     "8": px(8),
-    "12": px(12),
-    "20": px(20),
-    "32": px(32),
-    "48": px(48),
-    "96": px(96),
   },
-  contentWidth: {
-    xsmall: px(480),
-    small: px(600),
-    standard: px(740),
-    large: px(960),
-    xlarge: px(1120),
-    xxlarge: px(1350),
+  radius: {
+    "8": px(8),
+    "16": px(16),
+    "28": px(28),
+    full: "9999px",
   },
-  weight: {
-    regular: "400",
-    strong: "700",
+};
+
+const responsiveProperties = defineProperties({
+  conditions: {
+    mobile: {},
+    tablet: { "@media": `screen and (min-width: ${breakpoints.tablet}px)` },
+    desktop: { "@media": `screen and (min-width: ${breakpoints.desktop}px)` },
   },
-  border: {
-    width: {
-      "4": px(4),
-      "8": px(8),
-    },
-    radius: {
-      "8": px(8),
-      "16": px(16),
-      "28": px(28),
-      full: "9999px",
-    },
+  defaultCondition: "mobile",
+  properties: {
+    display: ["none", "flex", "block", "inline"],
+    flexDirection: ["row", "column"],
+    justifyContent: [
+      "stretch",
+      "flex-start",
+      "center",
+      "flex-end",
+      "space-around",
+      "space-between",
+    ],
+    alignItems: ["stretch", "flex-start", "center", "flex-end"],
+    paddingTop: spacing,
+    paddingBottom: spacing,
+    paddingLeft: spacing,
+    paddingRight: spacing,
+    marginTop: spacing,
+    marginBottom: spacing,
+    marginLeft: spacing,
+    marginRight: spacing,
+  },
+  shorthands: {
+    margin: ["marginTop", "marginBottom", "marginLeft", "marginRight"],
+    marginX: ["marginLeft", "marginRight"],
+    marginY: ["marginTop", "marginBottom"],
+    padding: ["paddingTop", "paddingBottom", "paddingLeft", "paddingRight"],
+    paddingX: ["paddingLeft", "paddingRight"],
+    paddingY: ["paddingTop", "paddingBottom"],
+    placeItems: ["justifyContent", "alignItems"],
   },
 });
 
-function px(value: string | number) {
-  return `${value}px`;
-}
+export const vars = createGlobalTheme(":root", {
+  palette,
+  spacing,
+  contentWidth,
+  weight,
+  border,
+});
+
+export const sprinkles = createSprinkles(responsiveProperties);
+export type Sprinkles = Parameters<typeof sprinkles>[0];
