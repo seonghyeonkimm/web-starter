@@ -12,4 +12,9 @@ globalStyle("html", {
   background: vars.palette.white,
   color: vars.palette.scales.gray900,
   fontFamily: "Noto Sans KR",
+  boxSizing: "border-box",
+});
+
+globalStyle("*, *::before, *::after", {
+  boxSizing: "inherit",
 });
