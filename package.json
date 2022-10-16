@@ -21,7 +21,6 @@
     "@prisma/client": "^4.4.0",
     "@vanilla-extract/recipes": "^0.2.5",
     "@vanilla-extract/sprinkles": "^1.5.0",
-    "clsx": "^1.2.1",
     "graphql": "^16.6.0",
     "graphql-modules": "^2.1.0",
     "next": "^12.3.1",
