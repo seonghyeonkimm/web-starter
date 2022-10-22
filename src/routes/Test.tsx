@@ -1,10 +1,10 @@
 import * as React from "react";
-import { graphql, useFragment, useLazyLoadQuery } from "react-relay";
+import { graphql, useFragment, useLazyLoadQuery } from "react-relay/hooks";
 import { TestQuery } from "src/relay/__generated__/TestQuery.graphql";
 
 type Props = {};
 
-const TESTS_QUERY = graphql`
+export const TESTS_QUERY = graphql`
   query TestQuery {
     cart(id: "633969387d317c870e4c4b6b") {
       ...TestFragment

@@ -36,10 +36,10 @@ export const RoutesQuery = graphql`
 function MainPage({
   preloadedQuery,
 }: RelayProps<Record<string, unknown>, routesQuery>) {
+  const session = useSession();
   const { theme, setTheme } = useTheme();
   const query = usePreloadedQuery(RoutesQuery, preloadedQuery);
   const connections = [query.cartItems.__id];
-  const session = useSession();
 
   const [addMutation] = useMutation<routesAddCartMutation>(graphql`
     mutation routesAddCartMutation($connections: [ID!]!) {

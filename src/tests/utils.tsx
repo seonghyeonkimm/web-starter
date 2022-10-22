@@ -95,11 +95,14 @@ export function renderRelayPreloadApp<T extends OperationType>({
   variables?: T["variables"];
 }) {
   const environment = createMockEnvironment();
-  environment.mock.queueOperationResolver((operation) =>
-    MockPayloadGenerator.generate(operation, renderProps.resolveOperations)
-  );
+  environment.mock.queueOperationResolver((operation) => {
+    return MockPayloadGenerator.generate(
+      operation,
+      renderProps.resolveOperations
+    );
+  });
   environment.mock.queuePendingOperation(query, variables);
-  const preloadedQuery = loadQuery<T>(environment, query, variables);
+  const preloadedQuery = loadQuery<T>(environment, query, variables ?? {});
 
   const renderResult = render(
     <RelayEnvironmentProvider environment={environment}>
