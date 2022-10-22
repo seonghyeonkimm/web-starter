@@ -5,7 +5,7 @@
   "scripts": {
     "postinstall": "yarn codegen && yarn prisma:generate && yarn run relay",
     "dev": "NODE_ENV=development concurrently 'next dev' 'yarn run relay --watch' 'docker-compose up -d'",
-    "test": "NODE_ENV=development concurrently 'dotenv -e .env.local -- jest --watch' 'yarn run relay --watch'",
+    "test": "NODE_ENV=development concurrently 'yarn run relay --watch' 'dotenv -e .env.local -- jest --watch'",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
