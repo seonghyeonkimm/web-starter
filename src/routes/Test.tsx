@@ -8,11 +8,6 @@ const TESTS_QUERY = graphql`
   query TestQuery {
     cart(id: "633969387d317c870e4c4b6b") {
       ...TestFragment
-      items {
-        id
-        name
-        quantity
-      }
     }
   }
 `;
@@ -31,7 +26,6 @@ function Test(props: Props) {
 const CHILD_FRAGMENT = graphql`
   fragment TestFragment on Cart {
     id
-    totalItems
   }
 `;
 

@@ -1,4 +1,4 @@
-import type { CartItem, PrismaClient } from "@prisma/client";
+import type { Cart, CartItem, PrismaClient } from "@prisma/client";
 
 import type { AddToCartInput } from "src/graphql/__generated__/graphql";
 
@@ -8,7 +8,7 @@ class CartService {
   async findOrCreateCart(id: string) {
     const { prisma } = this;
 
-    let cart;
+    let cart: Cart;
     if (id) {
       cart = await prisma.cart.findUnique({
         where: { id },

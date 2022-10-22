@@ -1,32 +1,35 @@
 type Query {
   cart(id: ID): Cart
+  cartItems(id: ID, after: String, first: Int = 10): CartCartItemsConnection!
 }
 
 type Mutation {
-  addCartItem(input: AddToCartInput!): Cart
-  removeCartItem(input: RemoveFromCartInput!): Cart
+  addCartItem(input: AddToCartInput!): CartCartItemsEdge
+  removeCartItem(input: RemoveFromCartInput!): CartItem!
 }
 
 type Cart {
   id: ID!
-  totalItems: Int!
-  items: [CartItem!]!
-  subTotal: Money!
+  items: CartCartItemsConnection
 }
 
-type CartItem {
+type CartCartItemsConnection implements Connection {
+  totalCount: Int!
+  pageInfo: PageInfo!
+  edges: [CartCartItemsEdge!]!
+}
+
+type CartCartItemsEdge implements Edge {
+  cursor: String!
+  node: CartItem
+}
+
+type CartItem implements Node {
   id: ID!
   name: String!
   description: String
-  unitTotal: Money!
-  lineTotal: Money!
   quantity: Int!
   image: String
-}
-
-type Money {
-  formatted: String!
-  amount: Int!
 }
 
 input AddToCartInput {

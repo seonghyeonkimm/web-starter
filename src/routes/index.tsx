@@ -9,13 +9,25 @@ import { routesRemoveCartMutation } from "src/relay/__generated__/routesRemoveCa
 
 export const RoutesQuery = graphql`
   query routesQuery {
-    cart(id: "634a7e4467d45160072cdc7d") {
-      id
-      totalItems
-      items {
-        id
-        name
-        quantity
+    cartItems(id: "634a7e4467d45160072cdc7d", first: 10)
+      @connection(key: "routesQuery_cartItems") {
+      __id
+      pageInfo {
+        hasNextPage
+        hasPreviousPage
+        startCursor
+        endCursor
+      }
+      totalCount
+      edges {
+        cursor
+        node {
+          id
+          name
+          description
+          image
+          quantity
+        }
       }
     }
   }
@@ -26,38 +38,30 @@ function MainPage({
 }: RelayProps<Record<string, unknown>, routesQuery>) {
   const { theme, setTheme } = useTheme();
   const query = usePreloadedQuery(RoutesQuery, preloadedQuery);
+  const connections = [query.cartItems.__id];
   const session = useSession();
 
   const [addMutation] = useMutation<routesAddCartMutation>(graphql`
-    mutation routesAddCartMutation {
+    mutation routesAddCartMutation($connections: [ID!]!) {
       addCartItem(
         input: {
           cartId: "634a7e4467d45160072cdc7d"
           name: "NewCartItem"
           price: 10000
         }
-      ) {
-        id
-        totalItems
-        items {
+      ) @prependEdge(connections: $connections) {
+        cursor
+        node {
           id
-          name
-          quantity
         }
       }
     }
   `);
 
   const [removeMutation] = useMutation<routesRemoveCartMutation>(graphql`
-    mutation routesRemoveCartMutation($itemId: ID!) {
+    mutation routesRemoveCartMutation($itemId: ID!, $connections: [ID!]!) {
       removeCartItem(input: { id: $itemId }) {
-        id
-        totalItems
-        items {
-          id
-          name
-          quantity
-        }
+        id @deleteEdge(connections: $connections)
       }
     }
   `);
@@ -70,7 +74,7 @@ function MainPage({
       <button
         onClick={() =>
           addMutation({
-            variables: {},
+            variables: { connections },
           })
         }
       >
@@ -83,7 +87,7 @@ function MainPage({
             .elements[0] as HTMLInputElement;
           if ($deleteCartItemInput.value) {
             removeMutation({
-              variables: { itemId: $deleteCartItemInput.value },
+              variables: { itemId: $deleteCartItemInput.value, connections },
             });
             $deleteCartItemInput.value = "";
           }
@@ -92,7 +96,7 @@ function MainPage({
         <input type="text" id="deleteCartItemId" />
         <button type="submit">Delete CartItem</button>
       </form>
-      <pre>{JSON.stringify(query.cart, null, 2)}</pre>
+      <pre>{JSON.stringify(query.cartItems, null, 2)}</pre>
       <hr />
       <div>
         <button onClick={() => signIn("google")}>SignIn</button>

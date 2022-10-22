@@ -1,0 +1,19 @@
+interface Node {
+  id: ID!
+}
+
+interface Edge {
+  cursor: String!
+}
+
+interface Connection {
+  totalCount: Int!
+  pageInfo: PageInfo!
+}
+
+type PageInfo {
+  hasNextPage: Boolean!
+  hasPreviousPage: Boolean!
+  startCursor: String
+  endCursor: String
+}
