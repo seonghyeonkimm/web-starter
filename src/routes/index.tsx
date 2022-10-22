@@ -9,8 +9,7 @@ import { routesRemoveCartMutation } from "src/relay/__generated__/routesRemoveCa
 
 export const RoutesQuery = graphql`
   query routesQuery {
-    cartItems(id: "634a7e4467d45160072cdc7d", first: 10)
-      @connection(key: "routesQuery_cartItems") {
+    cartItems(first: 10) @connection(key: "routesQuery_cartItems") {
       __id
       pageInfo {
         hasNextPage

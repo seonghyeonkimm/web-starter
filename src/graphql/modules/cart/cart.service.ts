@@ -22,19 +22,15 @@ class CartService {
     return cart;
   }
 
-  async getCartItems(id: string) {
+  async getCartItems() {
     const { prisma } = this;
-    const items = await prisma.cart
-      .findUnique({
-        where: { id },
-      })
-      .items();
+    const items = await prisma.cart.findFirst().items();
 
     return items;
   }
 
   async getTotalItems(id: string) {
-    const items = await this.getCartItems(id);
+    const items = await this.getCartItems();
     return items.reduce((total, item) => total + item.quantity || 1, 0);
   }
 

@@ -1,6 +1,6 @@
 type Query {
   cart(id: ID): Cart
-  cartItems(id: ID, after: String, first: Int = 10): CartCartItemsConnection!
+  cartItems(after: String, first: Int = 10): CartCartItemsConnection!
 }
 
 type Mutation {

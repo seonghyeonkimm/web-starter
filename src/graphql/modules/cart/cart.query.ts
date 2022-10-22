@@ -4,8 +4,8 @@ const CartQuery: CartModule.Resolvers["Query"] = {
   cart: async (_, { id }, { cartService }) => {
     return cartService.findOrCreateCart(id);
   },
-  cartItems: async (_, { id }, { cartService }) => {
-    const items = await cartService.getCartItems(id);
+  cartItems: async (_, __, { cartService }) => {
+    const items = await cartService.getCartItems();
 
     return {
       totalCount: items.length,
