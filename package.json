@@ -5,14 +5,14 @@
   "scripts": {
     "postinstall": "yarn codegen && yarn prisma:generate && yarn run relay",
     "dev": "NODE_ENV=development concurrently 'next dev' 'yarn run relay --watch' 'docker-compose up -d'",
+    "test": "NODE_ENV=development concurrently 'dotenv -e .env.local -- jest --watch' 'yarn run relay --watch'",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
     "relay": "relay-compiler",
     "codegen": "graphql-codegen --config codegen.yml",
     "prisma:cli": "dotenv -e .env.local -- prisma",
-    "prisma:generate": "yarn run prisma:cli generate",
-    "test": "dotenv -e .env.local -- jest --watch"
+    "prisma:generate": "yarn run prisma:cli generate"
   },
   "dependencies": {
     "@graphql-tools/schema": "^9.0.4",

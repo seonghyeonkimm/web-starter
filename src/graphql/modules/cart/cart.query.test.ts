@@ -1,29 +1,27 @@
-import { pagesQuery$data } from "src/relay/__generated__/pagesQuery.graphql";
+type QueryDataType = {
+  cart: {
+    id: string;
+  };
+};
 
 describe("cart.query", () => {
   it("return right data", async () => {
     const {
       executionResult: {
         data: {
-          cart: { id, totalItems, items },
+          cart: { id },
         },
       },
-    } = await graphqlServer.inject<pagesQuery$data>({
+    } = await graphqlServer.inject<QueryDataType>({
       document: `query {
-        cart(id: "63482cb11921456c7c4aed87") {
+        cart(id: "634a7e4467d45160072cdc7d") {
           id
-          totalItems
-          items {
-            id
-            name
-            quantity
-          }
         }
       }`,
     });
 
-    expect(id).toBe("63482cb11921456c7c4aed87");
-    expect(totalItems).toBe(0);
-    expect(items).toEqual([]);
+    expect(id).toBe("634a7e4467d45160072cdc7d");
   });
 });
+
+export {};
