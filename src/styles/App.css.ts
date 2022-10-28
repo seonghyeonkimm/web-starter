@@ -11,7 +11,6 @@ globalStyle(`${darkMode}`, {
 globalStyle("html", {
   background: vars.palette.white,
   color: vars.palette.scales.gray900,
-  fontFamily: "Noto Sans KR",
   boxSizing: "border-box",
 });
 
