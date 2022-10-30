@@ -1,7 +1,7 @@
 import type { CartModule } from "./__generated__/module-types";
 
 const CartResolver: CartModule.Resolvers["Cart"] = {
-  items: async ({ id }, _, { cartService }) => {
+  items: async (_, __, { cartService }) => {
     const items = await cartService.getCartItems();
 
     return {

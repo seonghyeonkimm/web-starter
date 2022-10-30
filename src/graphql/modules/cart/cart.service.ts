@@ -29,7 +29,7 @@ class CartService {
     return items;
   }
 
-  async getTotalItems(id: string) {
+  async getTotalItems() {
     const items = await this.getCartItems();
     return items.reduce((total, item) => total + item.quantity || 1, 0);
   }
