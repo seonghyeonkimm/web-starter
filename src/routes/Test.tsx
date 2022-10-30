@@ -1,8 +1,7 @@
 import * as React from "react";
 import { graphql, useFragment, useLazyLoadQuery } from "react-relay/hooks";
-import { TestQuery } from "src/relay/__generated__/TestQuery.graphql";
 
-type Props = {};
+import type { TestQuery } from "src/relay/__generated__/TestQuery.graphql";
 
 export const TESTS_QUERY = graphql`
   query TestQuery {
@@ -12,7 +11,7 @@ export const TESTS_QUERY = graphql`
   }
 `;
 
-function Test(props: Props) {
+function Test() {
   const query = useLazyLoadQuery<TestQuery>(TESTS_QUERY, {});
 
   return (
@@ -29,7 +28,9 @@ const CHILD_FRAGMENT = graphql`
   }
 `;
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 export function Child({ queryKey }: { queryKey: any }) {
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const data = useFragment(CHILD_FRAGMENT, queryKey);
   return <div>Child</div>;
 }

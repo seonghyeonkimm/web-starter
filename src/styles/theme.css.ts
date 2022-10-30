@@ -1,6 +1,6 @@
 import colors from "tailwindcss/colors";
 import { createGlobalTheme } from "@vanilla-extract/css";
-import { defineProperties, createSprinkles } from "@vanilla-extract/sprinkles";
+import { createSprinkles, defineProperties } from "@vanilla-extract/sprinkles";
 
 export const darkMode = "[data-theme='dark']";
 

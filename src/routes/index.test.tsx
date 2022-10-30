@@ -1,16 +1,17 @@
-import { screen } from "@testing-library/react";
 import React from "react";
-import Test, { Child, TESTS_QUERY } from "./Test";
-
-import MainPage, { RoutesQuery } from "./index";
-import { routesQuery } from "src/relay/__generated__/routesQuery.graphql";
 import { useSession } from "next-auth/react";
+import { screen } from "@testing-library/react";
+
+import type { routesQuery } from "src/relay/__generated__/routesQuery.graphql";
+import type { TestQuery } from "src/relay/__generated__/TestQuery.graphql";
 import {
   renderRelayApp,
   renderRelayFragmentApp,
   renderRelayPreloadApp,
 } from "src/tests/utils";
-import { TestQuery } from "src/relay/__generated__/TestQuery.graphql";
+
+import MainPage, { RoutesQuery } from "./index";
+import Test, { Child, TESTS_QUERY } from "./Test";
 
 jest.mock("next-auth/react");
 

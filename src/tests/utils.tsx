@@ -1,15 +1,14 @@
 import React from "react";
+import type { OperationDescriptor, PreloadedQuery } from "react-relay";
 import {
   loadQuery,
-  OperationDescriptor,
-  PreloadedQuery,
   RelayEnvironmentProvider,
   useLazyLoadQuery,
 } from "react-relay";
+import type { GraphQLTaggedNode, OperationType } from "relay-runtime";
 import { createMockEnvironment, MockPayloadGenerator } from "relay-test-utils";
+import type { RelayMockEnvironment } from "relay-test-utils/lib/RelayModernMockEnvironment";
 import { render } from "@testing-library/react";
-import { GraphQLTaggedNode, OperationType } from "relay-runtime";
-import { RelayMockEnvironment } from "relay-test-utils/lib/RelayModernMockEnvironment";
 
 type OperationProps =
   | {

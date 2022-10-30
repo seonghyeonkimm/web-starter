@@ -1,7 +1,4 @@
 module.exports = {
-  env: {
-    "jest/globals": true,
-  },
   extends: [
     "next/core-web-vitals",
     "eslint:recommended",
@@ -42,4 +39,24 @@ module.exports = {
     "import/newline-after-import": "error",
     "import/no-duplicates": "error",
   },
+  overrides: [
+    {
+      env: {
+        "jest/globals": true,
+      },
+      files: ["*.test.ts", "*.test.tsx"],
+      plugins: ["jest"],
+      extends: ["plugin:jest/recommended"],
+      rules: {
+        "jest/no-disabled-tests": "warn",
+        "jest/no-focused-tests": "error",
+        "jest/no-identical-title": "error",
+        "jest/prefer-to-have-length": "warn",
+        "jest/valid-expect": "error",
+
+        // react-testing-library uses find* methods to assert
+        "jest/expect-expect": "off",
+      },
+    },
+  ],
 };

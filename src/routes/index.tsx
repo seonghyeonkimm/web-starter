@@ -3,9 +3,9 @@ import { signIn, signOut, useSession } from "next-auth/react";
 import { useTheme } from "next-themes";
 import type { RelayProps } from "relay-nextjs";
 
-import { routesQuery } from "src/relay/__generated__/routesQuery.graphql";
-import { routesAddCartMutation } from "src/relay/__generated__/routesAddCartMutation.graphql";
-import { routesRemoveCartMutation } from "src/relay/__generated__/routesRemoveCartMutation.graphql";
+import type { routesAddCartMutation } from "src/relay/__generated__/routesAddCartMutation.graphql";
+import type { routesQuery } from "src/relay/__generated__/routesQuery.graphql";
+import type { routesRemoveCartMutation } from "src/relay/__generated__/routesRemoveCartMutation.graphql";
 
 export const RoutesQuery = graphql`
   query routesQuery {
