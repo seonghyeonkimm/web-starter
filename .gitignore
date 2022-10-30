@@ -7,3 +7,4 @@ src/relay/__generated__/*
 !src/relay/__generated__/.gitkeep
 
 src/graphql/**/__generated__
+.vscode
