@@ -1,30 +1,34 @@
-import type { NextApiRequest, NextApiResponse } from "next";
-import { makeExecutableSchema } from "@graphql-tools/schema";
-import { createServer, useErrorHandler } from "@graphql-yoga/node";
+import { createSchema,createYoga, useErrorHandler } from 'graphql-yoga'
 
 import typeDefs from "src/graphql/__generated__/typeDefs";
 import { context, resolvers } from "src/graphql/modules";
 
-const schema = makeExecutableSchema({
+const schema = createSchema({
   typeDefs,
   resolvers,
 });
 
-const server = createServer<{ req: NextApiRequest; res: NextApiResponse }>({
+export default createYoga({
+  graphqlEndpoint: '/api/graphql',
   schema,
-  context,
+  context, 
   plugins:
     process.env.NODE_ENV === "development"
       ? [
           // eslint-disable-next-line react-hooks/rules-of-hooks
-          useErrorHandler((errorHandler) =>
-            errorHandler.map((e) => {
+          useErrorHandler(({ errors }) =>
+            errors.map((e) => {
               // eslint-disable-next-line no-console
               console.log("❌ error: ", e.message);
             })
           ),
         ]
       : [],
-});
+})
 
-export default server;
+export const config = {
+  api: {
+    // Disable body parsing (required for file uploads)
+    bodyParser: false
+  }
+}
